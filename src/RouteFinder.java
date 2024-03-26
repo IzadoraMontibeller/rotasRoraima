@@ -130,7 +130,7 @@ public class RouteFinder {
         boaVista.addNeighbor(saoLuiz, 245);
 
         // Seleção da cidade de partida
-        City startingCity = uiramuta;
+        City startingCity = saoJoaoDaBaliza;
 
         // Encontrar o caminho mais curto para boaVista
         List<City> shortestPath = findShortestPath(startingCity, boaVista);
@@ -211,8 +211,6 @@ public class RouteFinder {
 
     // Método para calcular a heurística entre duas cidades
     public static int calculateHeuristic(City current, City destination) {
-        // Aqui usaremos uma heurística simples: a distância direta entre as cidades
-        // Você pode adotar outras heurísticas mais sofisticadas dependendo do contexto
         return Math.abs(current.distanceToBoaVista - destination.distanceToBoaVista);
     }
 }
